@@ -5,7 +5,7 @@
         "revision": "cf8a86177665825a7f30780e8fe1af333a0527c6"
       },
       "homebrew/core": {
-        "revision": "9e9964bce5a6f50fe297e4efb4f14c6999437b7f"
+        "revision": "8cd37f5b1dea068aa6b7cfa4225715d042a8df4c"
       }
     },
     "brew": {
@@ -133,7 +133,7 @@
       "Fedora release 36 (Thirty Six)": {
         "HOMEBREW_VERSION": "3.6.4",
         "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
-        "Homebrew/linuxbrew-core": "9e9964bce5a6f50fe297e4efb4f14c6999437b7f",
+        "Homebrew/linuxbrew-core": "8cd37f5b1dea068aa6b7cfa4225715d042a8df4c",
         "GCC": "12.0.1"
       }
     }

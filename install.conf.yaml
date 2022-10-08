@@ -9,12 +9,9 @@
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
-    ~/.oh-my-zsh: oh-my-zsh
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
     ~/.p10k.zsh: p10k.zsh
-    ~/.config/vivaldi: vivaldi
-    ~/.vscode: vscode
 
 - shell:
     - [brew bundle, Installing Homebrew packages]
