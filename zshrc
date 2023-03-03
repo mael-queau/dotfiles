@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aliases brew catimg copypath docker flutter gitignore thefuck vscode jump)
+plugins=(git aliases brew catimg copypath docker docker-compose flutter gitignore thefuck vscode jump autojump dirhistory dnf fnm isodate systemd deno pyenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,11 +104,18 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="nano ~/.zshrc"
+alias zource="source ~/.zshrc"
+alias ohmyzsh="nano ~/.oh-my-zsh"
+alias omzource="source ~/.oh-my-zsh"
+
+export PATH=$PATH:$HOME/bin
+
+# sdcc
+export PATH=$PATH:/usr/libexec/sdcc
 
 # fnm
-
+export PATH=/home/mael/.fnm:$PATH
 eval "$(fnm env)"
 eval "$(fnm env --use-on-cd)" > /dev/null
 
@@ -121,3 +128,57 @@ eval "$(fnm env --use-on-cd)" > /dev/null
 
 # JetBrains scripts
 export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
+
+# Flutter
+export PATH="$PATH:$HOME/.local/share/flutter/bin"
+
+# ADB
+export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
+
+# JDK
+export PATH="$PATH:$HOME/.jdks/openjdk-19/bin"
+
+# function weather(){ curl -s http://wttr.in/$1,$2; };
+function weather(){
+  curl -s http://wttr.in/${1:-Nantes},$2;
+}
+
+# GitHub completion
+eval "$(gh completion -s zsh)"
+
+# Deno
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+# PSP toolchain
+export PSPDEV=$HOME/pspdev
+export PATH=$PATH:$PSPDEV/bin
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/mael/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/mael/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/mael/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/mael/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+[ -f "/home/mael/.ghcup/env" ] && source "/home/mael/.ghcup/env" # ghcup-env
+# bun completions
+[ -s "/home/mael/.bun/_bun" ] && source "/home/mael/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
