@@ -154,22 +154,6 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export PSPDEV=$HOME/pspdev
 export PATH=$PATH:$PSPDEV/bin
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/mael/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/mael/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/mael/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/mael/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
 [ -f "/home/mael/.ghcup/env" ] && source "/home/mael/.ghcup/env" # ghcup-env
 # bun completions
 [ -s "/home/mael/.bun/_bun" ] && source "/home/mael/.bun/_bun"
@@ -178,6 +162,7 @@ unset __conda_setup
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
