@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aliases brew catimg copypath docker docker-compose flutter gitignore thefuck vscode jump autojump dirhistory dnf fnm isodate systemd deno pyenv)
+plugins=(git aliases brew catimg copypath docker docker-compose flutter gitignore thefuck vscode jump autojump dirhistory dnf fnm isodate systemd deno)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -154,16 +154,8 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export PSPDEV=$HOME/pspdev
 export PATH=$PATH:$PSPDEV/bin
 
-[ -f "/home/mael/.ghcup/env" ] && source "/home/mael/.ghcup/env" # ghcup-env
-# bun completions
-[ -s "/home/mael/.bun/_bun" ] && source "/home/mael/.bun/_bun"
-
 # bun
+[ -f "/home/mael/.ghcup/env" ] && source "/home/mael/.ghcup/env"
+[ -s "/home/mael/.bun/_bun" ] && source "/home/mael/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
