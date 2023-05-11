@@ -77,8 +77,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aliases brew catimg copypath docker docker-compose flutter 
-gitignore thefuck vscode jump autojump dirhistory dnf fnm isodate systemd 
+plugins=(git aliases brew catimg copypath docker docker-compose flutter
+gitignore thefuck vscode jump autojump dirhistory dnf fnm isodate systemd
 deno zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
@@ -140,11 +140,6 @@ export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 # JDK
 export PATH="$PATH:$HOME/.jdks/openjdk-19/bin"
 
-# function weather(){ curl -s http://wttr.in/$1,$2; };
-function weather(){
-  curl -s http://wttr.in/${1:-Nantes},$2;
-}
-
 # GitHub completion
 eval "$(gh completion -s zsh)"
 
@@ -174,3 +169,24 @@ esac
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# github-copilot-cli
+eval "$(github-copilot-cli alias -- "$0")"
+
+# wttr.in
+function weather() {
+  local city=${1:-Nantes}
+  local country=${2:-France}
+  local units=${3:-m}
+  local days=${4:-0}
+  curl -s "wttr.in/${city},${country}?${units}&${days}F"
+}
+
+# Ruby
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# Flutter
+export PATH="$HOME/flutter/bin:$PATH"
