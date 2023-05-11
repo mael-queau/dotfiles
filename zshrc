@@ -177,9 +177,7 @@ eval "$(github-copilot-cli alias -- "$0")"
 function weather() {
   local city=${1:-Nantes}
   local country=${2:-France}
-  local units=${3:-m}
-  local days=${4:-0}
-  curl -s "wttr.in/${city},${country}?${units}&${days}F"
+  curl -s "wttr.in/${city},${country}?m"
 }
 
 # Ruby
