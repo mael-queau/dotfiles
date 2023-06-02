@@ -188,3 +188,7 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Flutter
 export PATH="$HOME/flutter/bin:$PATH"
+
+# Android platform-tools
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+qr() { echo add | qrencode -o - -t UTF8; }
