@@ -192,3 +192,6 @@ export PATH="$HOME/flutter/bin:$PATH"
 # Android platform-tools
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 qr() { echo add | qrencode -o - -t UTF8; }
+
+# Docker
+alias dstpa="docker stop \$(docker ps -q)"
