@@ -195,3 +195,6 @@ qr() { echo add | qrencode -o - -t UTF8; }
 
 # Docker
 alias dstpa="docker stop \$(docker ps -q)"
+
+# Visual Studio Code Insiders
+alias code="code-insiders"
