@@ -117,9 +117,8 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/usr/libexec/sdcc
 
 # fnm
-export PATH=/home/mael/.fnm:$PATH
-eval "$(fnm env)"
-eval "$(fnm env --use-on-cd)" > /dev/null
+export PATH="/home/mael/.local/share/fnm:$PATH"
+eval "`fnm env`"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -188,10 +187,6 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Flutter
 export PATH="$HOME/flutter/bin:$PATH"
-
-# Android platform-tools
-export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
-qr() { echo add | qrencode -o - -t UTF8; }
 
 # Docker
 alias dstpa="docker stop \$(docker ps -q)"
