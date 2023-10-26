@@ -193,3 +193,16 @@ alias dstpa="docker stop \$(docker ps -q)"
 
 # Visual Studio Code Insiders
 alias code="code-insiders"
+
+# Go
+export "PATH=$PATH:/usr/local/go/bin"
+
+# asdf
+. "$HOME/.asdf/asdf.sh"
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+
+# Other aliases
+alias dotex="sed -e 's/=.*$/=xxx/' .env > .env.example"
