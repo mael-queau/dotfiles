@@ -198,7 +198,7 @@ alias code="code-insiders"
 export "PATH=$PATH:/usr/local/go/bin"
 
 # asdf
-. "$HOME/.asdf/asdf.sh"
+. /opt/asdf-vm/asdf.sh
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
