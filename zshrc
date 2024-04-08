@@ -134,7 +134,9 @@ export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 export PATH="$PATH:$HOME/.local/share/flutter/bin"
 
 # ADB
-export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # JDK
 export PATH="$PATH:$HOME/.jdks/openjdk-19/bin"
@@ -169,9 +171,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-#  GitHub Copilot
-eval "$(gh copilot alias -- zsh)"
-
 # wttr.in
 function weather() {
   local city=${1:-Nantes}
@@ -203,6 +202,9 @@ export "PATH=$PATH:/usr/local/go/bin"
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
+
+# GitHub Copilot CLI
+eval "$(gh copilot alias -- zsh)"
 
 # Other aliases
 alias dotex="sed -e 's/=.*$/=xxx/' .env > .env.example"
