@@ -117,7 +117,7 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:/usr/libexec/sdcc
 
 # fnm
-export PATH="/home/mael/.local/share/fnm:$PATH"
+export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -151,8 +151,8 @@ export PSPDEV=$HOME/pspdev
 export PATH=$PATH:$PSPDEV/bin
 
 # bun
-[ -f "/home/mael/.ghcup/env" ] && source "/home/mael/.ghcup/env"
-[ -s "/home/mael/.bun/_bun" ] && source "/home/mael/.bun/_bun"
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
