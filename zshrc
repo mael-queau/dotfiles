@@ -169,8 +169,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# github-copilot-cli
-eval "$(github-copilot-cli alias -- "$0")"
+#  GitHub Copilot
+eval "$(gh copilot alias -- zsh)"
 
 # wttr.in
 function weather() {
