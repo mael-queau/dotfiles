@@ -78,8 +78,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git aliases brew catimg copypath docker docker-compose flutter
-gitignore thefuck vscode jump autojump dirhistory dnf fnm isodate systemd
-deno zsh-autosuggestions zsh-syntax-highlighting)
+gitignore thefuck vscode jump dirhistory dnf fnm isodate systemd
+deno zsh-autosuggestions zsh-syntax-highlighting) # removed autojump
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,6 +112,9 @@ alias ohmyzsh="nano ~/.oh-my-zsh"
 alias omzource="source ~/.oh-my-zsh"
 
 export PATH=$PATH:$HOME/bin
+
+# ssh agent
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
 
 # sdcc
 export PATH=$PATH:/usr/libexec/sdcc
@@ -208,3 +211,8 @@ eval "$(gh copilot alias -- zsh)"
 
 # Other aliases
 alias dotex="sed -e 's/=.*$/=xxx/' .env > .env.example"
+
+eval $(thefuck --alias)
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
