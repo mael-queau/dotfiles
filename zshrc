@@ -187,9 +187,6 @@ export CPPFLAGS="-I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
-# Flutter
-export PATH="$HOME/flutter/bin:$PATH"
-
 # Docker
 alias dstpa="docker stop \$(docker ps -q)"
 
